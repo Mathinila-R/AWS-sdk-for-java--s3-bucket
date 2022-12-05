@@ -37,7 +37,9 @@ public class Application {
             ListUsersResult response = iam.listUsers(request);
 
             for(User user : response.getUsers()) {
-                System.out.format("Retrieved user %s", user.getUserName());
+            	System.out.format("\n Retrieved user : %s", user.getUserName());
+                System.out.format("\n Password last changed : %s", user.getPasswordLastUsed());
+               
             }
 
             request.setMarker(response.getMarker());
